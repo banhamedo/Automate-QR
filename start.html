@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #yes-button {
+            background-color: #28a745; /* Green for Yes */
+        }
+
+        #yes-button:hover {
+            background-color: #218838;
+        }
+
+        #no-button {
+            background-color: #dc3545; /* Red for No */
+        }
+
+        #no-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Do you want to start  </h1>
+    <br><br>
+    <div class="button-container">
+        <button id="yes-button">Yes</button>
+        <button id="no-button">No</button>
+    </div>
+
+    <script>
+        // Handle the "Yes" button click
+        document.getElementById("yes-button").addEventListener("click", function () {
+            window.location.href = "index.php"; // Redirect to index.php
+        });
+
+        // Handle the "No" button click
+        document.getElementById("no-button").addEventListener("click", function () {
+            const response = confirm("Are you sure you don't want to start?");
+            if (response) {
+                alert("Okay, let me know if you change your mind!");
+            } else {
+                // If the user cancels, do nothing or ask again
+            }
+        });
+    </script>
+</body>
+</html>
